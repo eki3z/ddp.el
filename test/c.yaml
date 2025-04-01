@@ -1,0 +1,16 @@
+name: Charlie
+age: 35
+city: San Francisco
+hobbies:
+  - painting
+  - swimming
+  - coding
+details:
+  email: charlie@example.com
+  active: false
+  score: 77.8
+friends:
+  - name: Eve
+    age: 29
+  - name: Frank
+    age: 32

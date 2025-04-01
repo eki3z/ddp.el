@@ -1,0 +1,19 @@
+name = "Bob"
+age = 25
+city = "London"
+
+[hobbies]
+list = ["gaming", "cooking", "traveling"]
+
+[details]
+email = "bob@example.com"
+active = true
+score = 92.3
+
+[[friends]]
+name = "Alice"
+age = 30
+
+[[friends]]
+name = "Dave"
+age = 28
