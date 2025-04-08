@@ -32,11 +32,6 @@
 ;; buffers, regions, or files, with debounced updates, font-locked output, and
 ;; a customizable minibuffer interface with history and key bindings.
 
-;; Examples
-;;
-;;
-;; TODO extract a generic package to show result according to input
-
 ;;; Code:
 
 (require 'subr-x)
@@ -68,7 +63,7 @@
 
 (defcustom ddp-display-method 'window
   "How to display ddp output.
-value is one of:
+Value is one of:
   - `window' : Display output in window.
   - `posframe' : Display output in posframe."
   :type '(choice (const :tag "Window" window)
@@ -77,7 +72,7 @@ value is one of:
 
 (defcustom ddp-display-style 'grow
   "Default display style for the ddp output display.
-value is one of:
+Value is one of:
   - `fixed' : Use a fixed height (MIN),
   - `fit'   : Adjust height to fit content, between MIN and MAX.
   - `grow'  : Start at MIN, only increase (up to MAX) as content grows."
@@ -699,14 +694,14 @@ Installs keymap, bindings and hooks for debouncing and cleanup."
   :url "https://github.com/mgdm/htmlq"
   :exec "htmlq"
   :cmd "%e -f %f -- %q"
-  :mode html-ts-mode)
+  :mode html-mode)
 
 (defun ddp-pup-pred ()
   "Detect major mode for `ddp-pup' query."
   (pcase (ddp--get :query)
     ((pred (string-suffix-p "json{}")) 'json-ts-mode)
     ((pred (string-suffix-p "text{}")) 'text-mode)
-    (_ 'html-ts-mode)))
+    (_ 'html-mode)))
 
 (ddp-define-command "pup"
   "Parse html using pup."
