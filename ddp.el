@@ -699,7 +699,7 @@ Installs keymap, bindings and hooks for debouncing and cleanup."
 (defun ddp-pup-pred ()
   "Detect major mode for `ddp-pup' query."
   (pcase (ddp--get :query)
-    ((pred (string-suffix-p "json{}")) 'json-ts-mode)
+    ((pred (string-suffix-p "json{}")) 'js-json-mode)
     ((pred (string-suffix-p "text{}")) 'text-mode)
     (_ 'html-mode)))
 
