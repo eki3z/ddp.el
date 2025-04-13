@@ -51,10 +51,8 @@ Clone this repository and add it to your `load-path`, then require the package i
 ```
 
 - **MELPA**
-This package is intended for [MELPA]. Once available, install it with:
-
-M-x package-install RET ddp RET
-(For now, it’s not on MELPA yet—submit it via a pull request to the MELPA repository after testing!)
+   
+M-x `package-install RET ddp RET`
 
 ## Features
 
@@ -138,11 +136,11 @@ EXPLAINATION:
 
 ```elisp
 (defun ddp-pup-pred ()
-  "Detect major mode for `ddp-pup' query."
+  "Detect major mode for `ddp-pup' output based on query."
   (pcase (ddp--get :query)
-    ((pred (string-suffix-p "json{}")) 'json-ts-mode)
+    ((pred (string-suffix-p "json{}")) 'js-json-mode)
     ((pred (string-suffix-p "text{}")) 'text-mode)
-    (_ 'html-ts-mode)))
+    (_ 'html-mode)))
 
 (ddp-define-command "pup"
   "Parse html using pup."
