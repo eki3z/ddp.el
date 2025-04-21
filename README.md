@@ -93,17 +93,17 @@ EXPLAINATION:
  - `:cmd` : required, a string contains placeholders for substitution with properties in `ddp-plist`.
     - `%e`: `:exec`, executable command
     - `%q`: `:query`, selector string, to extract specific part from whole text
-    - `%f`: `:file`, selected file, temp file is created when no file provided.
+    - `%f`: `:file`, selected file, temp file is created when no file provided, e.g. region or buffer
     - `%r`: `:read`, input format, detected by customization or default function
     - `%w`: `:write`, output format, detected by customization or default function
- - `:url`: optional,  a url to show help info when error occurs
+ - `:url`: optional,  a url to show `:exec` information
+ - `:ansi`: optional, boolean to handle ansi output, usually used with --color option, default nil
+ - `:mode`: optional, major mode for output, usually used when exec do not support ansi, default `fundamental-mode`
+ - `:support`: optional, a list of formats the `:exec` supports aims to help to detect `:read/write` formats
+ - `:pred`: optional, an alist of customized functions to set `:read`, `:write` , `:mode` dynamically
  - `:delay`: optional, a number to set debounce delay per command
- - `:ansi`: optional, boolean to handle ansi output, usually used with --color option
- - `:mode`: optional, major mode for output, usually used when exec do not support ansi
  - `:method`: optional, a symbol  to set display method per command
  - `:style`: optional, a symbol to set display height style per command
- - `:support`: optional, a list of formats the exec supports
- - `:pred`: optional, an alist of customized functions to set :read, :write,:mode dynamically
  - `:bind`: optional, an alist of keybindings pair to bind customized commands per command
 
 ### Examples
