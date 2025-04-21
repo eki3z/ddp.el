@@ -346,7 +346,7 @@ Returns a list of strings by substituting placeholders in :cmd from
 `ddp-plist' value.
 When HEADER is non-nil, do not substitute %f."
   (ddp-bind (exec cmd temp file query cache-query read write)
-    (let ((spec `((?c . ,exec)
+    (let ((spec `((?e . ,exec)
                   (?r . ,(or read ""))
                   (?w . ,(or write ""))
                   (?q . ,(if header (concat "'" cache-query "'") (or query "")))
